@@ -1,4 +1,5 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Delete } from "@mui/icons-material";
+import { Box, Button, Container, TextField } from "@mui/material";
 import React from "react";
 
 function App() {
@@ -7,13 +8,19 @@ function App() {
     setTextFields(textFields + 1);
   };
   return (
-    <Box>
-      <TextField />
-      {[...Array(textFields).keys()].map(() => (
+    <Container>
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
         <TextField />
-      ))}
-      <Button onClick={handleTextField}>ADD TEXT Field</Button>
-    </Box>
+
+        {[...Array(textFields).keys()].map(() => (
+          <Box>
+            <TextField fullWidth />
+            <Delete />
+          </Box>
+        ))}
+        <Button onClick={handleTextField}>ADD TEXT Field</Button>
+      </Box>
+    </Container>
   );
 }
 

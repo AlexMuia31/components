@@ -9,10 +9,10 @@ function App() {
   return (
     <Box>
       <TextField />
-      <Button onClick={handleTextField}>ADD TEXT Field</Button>
       {[...Array(textFields).keys()].map(() => (
         <TextField />
       ))}
+      <Button onClick={handleTextField}>ADD TEXT Field</Button>
     </Box>
   );
 }
